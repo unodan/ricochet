@@ -17,7 +17,7 @@
 	echo "Backup results for database $db_name on $domain."  | tee -a $tmp_file
 	echo "----------------------------------------------------------------------"  | tee -a $tmp_file
 
-	./arcman.sh -q -u $db_usr -p $db_usr_pwd -d $db_name -h $host -f $domain -r $base -m 7 2>&1 | tee -a $tmp_file
+	./arcman.sh -q -u $db_usr -p $db_usr_pwd -d $db_name -h $host -f $domain -r $base -m $max_archives 2>&1 | tee -a $tmp_file
 	
 	results=`cat .results.log | head -c 1`
 
